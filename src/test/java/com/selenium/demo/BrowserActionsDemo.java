@@ -4,7 +4,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 /**
@@ -18,7 +17,7 @@ public class BrowserActionsDemo {
         // 设置chromedriver系统变量
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
         // 启动chrome浏览器
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
     }
 
@@ -47,7 +46,7 @@ public class BrowserActionsDemo {
     }
 
     @Test
-    public void winMax() throws InterruptedException {
+    public void windowTest() throws InterruptedException {
         // 全屏
         driver.manage().window().fullscreen();
         // 为了看清楚效果，等待2S
