@@ -39,3 +39,4 @@ buildNumber.properties
 .gitignore
 .idea/
 Selenium_Demo_v3.iml
+Selenium_Demo.iml
