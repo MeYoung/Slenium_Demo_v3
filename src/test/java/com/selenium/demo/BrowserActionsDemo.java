@@ -4,8 +4,9 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  * Created by 米阳 on 18/9/2017.
@@ -18,8 +19,15 @@ public class BrowserActionsDemo {
         // 设置chromedriver系统变量
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
         // 启动chrome浏览器
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
+    }
+
+    @Test
+    public void getURLTest() {
+        driver.get("https://www.baidu.com");
+        String url = driver.getCurrentUrl();
+        System.out.println("获取到的URL：" + url);
     }
 
     @Test
@@ -47,14 +55,14 @@ public class BrowserActionsDemo {
     }
 
     @Test
-    public void winMax() throws InterruptedException {
+    public void windowTest() throws InterruptedException {
         // 全屏
         driver.manage().window().fullscreen();
         // 为了看清楚效果，等待2S
         Thread.sleep(2000);
 
         // 设置浏览器大小
-        Dimension dimension = new Dimension(900, 800);
+        Dimension dimension = new Dimension(500, 500);
         driver.manage().window().setSize(dimension);
         // 为了看清楚效果，等待2S
         Thread.sleep(2000);
@@ -73,12 +81,12 @@ public class BrowserActionsDemo {
         Thread.sleep(2000);
 
         // 设置窗口位置，相对屏幕左下角
-        Point point = new Point(500, 600);
+        Point point = new Point(50, 60);
         driver.manage().window().setPosition(point);
         // 为了看清楚效果，等待2S
         Thread.sleep(2000);
 
-        // 获取窗口位置，相对屏幕左下角
+        // 获取窗口位置，相对屏幕左上角
         Point point1 = driver.manage().window().getPosition();
         int x = point1.getX();
         int y = point1.getY();
