@@ -47,24 +47,38 @@ public class BrowserActionsDemo {
     }
 
     @Test
-    public void winMax() {
+    public void winMax() throws InterruptedException {
         // 全屏
         driver.manage().window().fullscreen();
+        // 为了看清楚效果，等待2S
+        Thread.sleep(2000);
 
         // 设置浏览器大小
         Dimension dimension = new Dimension(900, 800);
         driver.manage().window().setSize(dimension);
+        // 为了看清楚效果，等待2S
+        Thread.sleep(2000);
 
+        // 获取窗口大小
         Dimension dimension1 = driver.manage().window().getSize();
         int h = dimension1.getHeight();
         int w = dimension1.getWidth();
         System.out.println("h:" + h + "w:" + w);
+        // 为了看清楚效果，等待2S
+        Thread.sleep(2000);
 
+        // 最大化
         driver.manage().window().maximize();
+        // 为了看清楚效果，等待2S
+        Thread.sleep(2000);
 
+        // 设置窗口位置，相对屏幕左下角
         Point point = new Point(500, 600);
         driver.manage().window().setPosition(point);
+        // 为了看清楚效果，等待2S
+        Thread.sleep(2000);
 
+        // 获取窗口位置，相对屏幕左下角
         Point point1 = driver.manage().window().getPosition();
         int x = point1.getX();
         int y = point1.getY();
