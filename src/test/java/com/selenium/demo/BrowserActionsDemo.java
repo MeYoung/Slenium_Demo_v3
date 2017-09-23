@@ -35,7 +35,7 @@ public class BrowserActionsDemo {
         // 打开百度首页
         driver.get("https://www.baidu.com");
         // 等同get()方法
-        driver.navigate().to("https://google.com");
+        driver.navigate().to("https://www.hao123.com");
         // 为了看清楚效果，等待2S
         Thread.sleep(2000);
         // 浏览器后退

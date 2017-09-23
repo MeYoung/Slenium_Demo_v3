@@ -12,22 +12,22 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class OpenBrowserTest {
 
     public static void main(String args[]) {
-        openEdge();
+        openFirefoxByGeck();
     }
 
-    private static void openEdge() {
+/*    private static void openEdge() {
 //        指定MicrosoftWebDriver路径
         System.setProperty("webdriver.edge.driver", ".\\drivers\\MicrosoftWebDriver.exe");
 //        启动 Edge浏览器
         WebDriver driver = new EdgeDriver();
-    }
+    }*/
 
-/*    private static void openFirefoxByGeck() {
+    private static void openFirefoxByGeck() {
 //        设置系统变量,并设置 geckodriver 的路径为系统属性值
         System.setProperty("webdriver.gecko.driver", ".\\drivers\\geckodriver.exe");
 //        实例化 FirefoxDriver
         WebDriver driver = new FirefoxDriver();
-    }*/
+    }
 
 /*    private static void openFirefoxDef(){
  //       实例化 FirefoxDriver
