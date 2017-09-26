@@ -1,10 +1,12 @@
 package com.selenium.demo;
 
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
+import org.omg.CORBA.PUBLIC_MEMBER;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.*;
+
+import java.util.List;
 
 /**
  * Created by 米阳 on 18/9/2017.
@@ -15,10 +17,79 @@ public class BrowserActionsDemo {
     @BeforeMethod
     public void openChrome() {
         // 设置chromedriver系统变量
-        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+        System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
         // 启动chrome浏览器
-        driver = new ChromeDriver();
+        driver = new InternetExplorerDriver();
 
+    }
+
+    @Test
+    public void getAttributeTest() throws InterruptedException {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 定位 登录 链接，并点击
+        driver.findElement(By.linkText("登录")).click();
+        Thread.sleep(3000);
+        // 定位用户名文本框元素 并获取该元素placeholder的属性值
+        String placeholderValue = driver.findElement(By.id("TANGRAM__PSP_10__userName")).getAttribute("placeholder");
+        System.out.println(placeholderValue);
+    }
+
+    @Test
+    public void submitTest() throws InterruptedException {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 定位 登录 链接，并点击
+        driver.findElement(By.linkText("登录")).click();
+        Thread.sleep(3000);
+        // 定位用户名文本框,不做任何操作，直接提交表单
+        driver.findElement(By.id("TANGRAM__PSP_10__userName")).submit();
+    }
+
+    @Test
+    public void clickTest() {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 定位 新闻 链接文本
+        WebElement newsLink = driver.findElement(By.xpath(".//*[@id='u1']/a[1]"));
+        // 点击 新闻 链接
+        newsLink.click();
+    }
+
+    @Test
+    public void clearTest() throws InterruptedException {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 定位搜索框
+        WebElement searchTextFiled = driver.findElement(By.id("kw"));
+        // 输入 "selenium"
+        searchTextFiled.sendKeys("selenium");
+        // 为了看到效果，等待3S
+        Thread.sleep(3000);
+        // 清空文本框
+        searchTextFiled.clear();
+    }
+
+    @Test
+    public void getTextTest() {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 定位首页右上角文本,多个元素用findElements()
+        List<WebElement> listText = driver.findElements(By.xpath(".//*[@id='u1']/a"));
+        for (WebElement element : listText) {
+            // 获取元素文本
+            String text = element.getText();
+            System.out.println(text);
+        }
+    }
+
+    @Test
+    public void getTitleTest() {
+        // 打开百度首页
+        driver.get("https://www.baidu.com");
+        // 获取百度首页的title
+        String tilte = driver.getTitle();
+        System.out.println(tilte);
     }
 
     @Test
