@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+  <test name="Selenium_Demo_v3">
+    <classes>
+      <!--被运行的Class 名-->
+      <class name="com.selenium.demo.WaitTest">
+        <methods>
+          <!--include 表示运行该 Test-->
+          <include name="waitTest"/>
+          <!--exclude 表示不运行改类下的该 Test-->
+          <exclude name="test1"/>
+        </methods>
+      </class> <!-- com.selenium.demo.WaitTest -->
+    </classes>
+  </test> <!-- Selenium_Demo_v3 -->
+</suite> <!-- Default Suite -->

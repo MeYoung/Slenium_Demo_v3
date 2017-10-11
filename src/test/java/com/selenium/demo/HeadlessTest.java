@@ -10,6 +10,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.testng.annotations.Test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by 米阳 on 2017/9/18.
  */
@@ -53,5 +56,17 @@ public class HeadlessTest {
         String title = driver.getTitle();
         System.out.println(title);
         driver.quit();
+    }
+
+    @Test
+    public void testee(){
+        String a ="asdfasf 123";
+        String regex = "[0-9]+";
+        Matcher matcher = Pattern.compile(regex).matcher(a.trim());
+        if(matcher.find()){
+            String lastChar=matcher.group();
+            System.out.println(lastChar);
+        }
+
     }
 }
