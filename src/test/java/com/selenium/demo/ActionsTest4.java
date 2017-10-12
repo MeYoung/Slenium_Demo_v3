@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
@@ -20,7 +21,8 @@ public class ActionsTest4 {
 
     @BeforeTest
     public void openchrome(){
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+        driver = new ChromeDriver();
     }
 
     @Test
@@ -65,7 +67,7 @@ public class ActionsTest4 {
 
     @Test
     public void selectedTest() throws InterruptedException {
-        driver.get("file:///E:/%E4%BA%91%E5%B1%82%E5%A4%A9%E5%92%A8%E7%9B%B4%E6%92%AD%E8%A7%86%E9%A2%91/lession6/selenium_html/selenium_html/index.html");
+        driver.get("file:///D:/html/index.html");
 //        定位下拉框
         WebElement selected = driver.findElement(By.id("selectWithMultipleEqualsMultiple"));
 //        定位下拉框中的选项
