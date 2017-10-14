@@ -10,18 +10,20 @@ import org.testng.annotations.Test;
  */
 public class ParallelTest1 {
     @BeforeSuite
-    public void testt(){
+    public void testt() {
         System.out.println("这是一个suite1");
     }
+
     @BeforeTest
-    public void testtest(){
+    public void testtest() {
         System.out.println("这是一个 beforetest1");
     }
 
     @BeforeClass
-    public void testttt(){
+    public void testttt() {
         System.out.println("这是一个 beforeClass");
     }
+
     @Test
     public void test1() throws InterruptedException {
         System.out.println("test1");

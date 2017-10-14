@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Default Suite" parallel="methods" thread-count="10">
+<suite name="Default Suite" parallel="tests" thread-count="2">
     <test name="Selenium_Demo_v3">
         <classes>
             <!--被运行的Class 名-->
             <class name="com.selenium.parallel.ParallelTest1"/>
+            <class name="com.selenium.parallel.ParallelTest2"/>
         </classes>
     </test><!-- Selenium_Demo_v3 -->
 
-    <test name="test2">
-        <classes>
-            <class name="com.selenium.parallel.ParallelTest2"/>
-        </classes>
-    </test>
+    <!--    <test name="test2">
+            <classes>
+                <class name="com.selenium.parallel.ParallelTest2"/>
+            </classes>
+        </test>-->
 </suite> <!-- Default Suite -->
