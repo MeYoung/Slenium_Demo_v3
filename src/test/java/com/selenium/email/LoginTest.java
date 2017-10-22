@@ -33,7 +33,6 @@ public class LoginTest {
         driver.findElement(By.name("email")).sendKeys("test");
         driver.findElement(By.name("password")).sendKeys("password");
         driver.findElement(By.id("dologin")).click();
-        Thread.sleep(30000);
         String msgError = driver.findElement(By.xpath(".//*[text()='帐号或密码错误']")).getText();
         System.out.println(msgError);
         Assert.assertEquals(msgError, "帐号或密码错误");

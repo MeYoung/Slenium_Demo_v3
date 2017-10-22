@@ -1,9 +1,15 @@
 package com.selenium.datadriver;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by 米阳 on 6/10/2017.
@@ -30,7 +36,20 @@ public class DataProviderTest {
     @DataProvider(name = "data1",parallel = true)
     public Object[][] data2() {
         return new String[][]{
-                {"name", "gsfdg", "fadsf"},{"a","v","c"}
+                {"name", "gsfdg", "fadsf"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},            {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"},
+                {"a", "v", "c"}
+
         };
     }
 
@@ -41,10 +60,40 @@ public class DataProviderTest {
         Thread.sleep(5000);
     }
 
+    WebDriver driver;
 
-/*    //获取 com.seleium.datadriver包下的Data类中的名为 dataTest的数据源
+//    @BeforeMethod
+    public void testChrome() {
+        System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        driver.get("http://mail.163.com/");
+    }
+
+    @DataProvider
+    public Object[][] loginData() {
+        return new Object[][]{
+                {"asdfas", "1"}
+        };
+
+    }
+
+    @Test(dataProvider = "loginData")
+    public void userError(String name, String pwd) throws InterruptedException {
+        driver.switchTo().frame("x-URS-iframe");
+        driver.findElement(By.name("email")).sendKeys(name);
+        driver.findElement(By.name("password")).sendKeys(pwd);
+        driver.findElement(By.id("dologin")).click();
+        String msgError = driver.findElement(By.xpath(".//*[text()='帐号或密码错误']")).getText();
+        System.out.println(msgError);
+        Assert.assertEquals(msgError, "帐号或密码错误");
+    }
+
+
+
+    //获取 com.seleium.datadriver包下的Data类中的名为 dataTest的数据源
     @Test(dataProvider = "dataTest", dataProviderClass = com.selenium.datadriver.Data.class)
     public void dataDriverTest2(int a) {
         System.out.println(a);
-    }*/
+    }
 }

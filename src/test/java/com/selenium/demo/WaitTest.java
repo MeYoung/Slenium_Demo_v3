@@ -37,6 +37,7 @@ public class WaitTest {
         // 等待元素加载
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(el));
+
         // 获取 文本值
         String text = driver.findElement(el).getText();
         System.out.println(text);

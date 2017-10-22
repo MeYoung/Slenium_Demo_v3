@@ -50,12 +50,14 @@ public class WindowSelectTest {
         driver.findElement(By.linkText("baidu")).click();
         // driver 控制权交回第一个窗口
         driver.switchTo().window(handle1);
+        Thread.sleep(5000);
     }
 
     @Test
-    public void uploadTest() {
+    public void uploadTest() throws InterruptedException {
         driver.get("file:///C:/selenium_html/index.html");
         // 定位上传控件，传入本地文件路径
-        driver.findElement(By.id("load")).sendKeys("c:\\a.html");
+        driver.findElement(By.id("load")).sendKeys("C:\\selenium_html\\aa.html");
+        Thread.sleep(5000);
     }
 }

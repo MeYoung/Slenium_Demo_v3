@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
  * Created by vidorh on 6/10/2017.
  */
 public class ParallelTest2 {
-    @BeforeSuite
+/*    @BeforeSuite
     public void testt(){
         System.out.println("这是一个suite2");
     }
@@ -20,7 +20,7 @@ public class ParallelTest2 {
     @BeforeClass
     public void testttt(){
         System.out.println("这是一个 beforeClass");
-    }
+    }*/
     @Test
     public void test5() throws InterruptedException {
         System.out.println("test5");

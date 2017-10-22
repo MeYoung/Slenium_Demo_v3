@@ -34,6 +34,7 @@ public class IframeTest {
         WebElement iframe = driver.findElement(By.tagName("iframe"));
         // 通过webelement 方式转交driver控制权
         driver.switchTo().frame(iframe);
+//        driver.switchTo().frame("aa");
         driver.findElement(By.linkText("baidu")).click();
         Thread.sleep(3000);
         // driver 控制权转交给原来界面

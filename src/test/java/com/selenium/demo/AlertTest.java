@@ -16,8 +16,10 @@ public class AlertTest {
 
     @BeforeClass
     public void openChrome() {
-        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", ".\\drivers\\geckodriver.exe");
+
+//        System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+        driver = new FirefoxDriver();
     }
 
     /**
@@ -72,7 +74,7 @@ public class AlertTest {
     public void promptTest() throws InterruptedException {
         driver.get("file:///C:/selenium_html/index.html");
         driver.findElement(By.className("prompt")).click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         // driver控制权转交给　alert
         Alert alert = driver.switchTo().alert();
         // 往弹窗输入 文本

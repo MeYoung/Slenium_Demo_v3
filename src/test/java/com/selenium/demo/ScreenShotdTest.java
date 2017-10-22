@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by vidorh on 4/10/2017.
  */
-public class ActionsTest3 {
+public class ScreenShotdTest {
     WebDriver driver;
 
     @BeforeMethod

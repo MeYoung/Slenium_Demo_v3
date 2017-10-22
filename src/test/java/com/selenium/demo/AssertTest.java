@@ -62,7 +62,14 @@ public class AssertTest {
     public void assertNotEqualsTest() {
         String a = "asdfg";
         String b = "cccccc";
+        Assert.assertEquals(a, b, "校验a,b值是否相等");
         // 判断两个值是否不相等
+        System.out.println("+++++++++++++++++=");
         Assert.assertNotEquals(a, b);
+
+//        输入用户名密码
+//        校验登陆成功  X
+
     }
+
 }

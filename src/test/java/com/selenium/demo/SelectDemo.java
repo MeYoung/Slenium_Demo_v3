@@ -37,15 +37,15 @@ public class SelectDemo {
         // 为了看效果，线程等待2S
         Thread.sleep(2000);
         // 通过下拉框文本值选取
-        select.selectByVisibleText("Opel");
+        select.selectByVisibleText("vivo");
         // 为了看效果，线程等待2S
         Thread.sleep(2000);
         // 通过下拉框索引选取
-        select.selectByIndex(2);
+        select.selectByIndex(3);
         // 为了看效果，线程等待2S
         Thread.sleep(2000);
         // 通过 value 属性值选取
-        select.selectByValue("volvo");
+        select.selectByValue("huawei");
     }
 
 
